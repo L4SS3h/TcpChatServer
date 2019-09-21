@@ -10,7 +10,6 @@ namespace TcpChatServer
         //Server side of a TCP chat server.
         static void Main(string[] args)
         {
-            //Console.WriteLine("Hello World!");
             TcpListener serverSocket = new TcpListener(6789);
             serverSocket.Start();
             Console.WriteLine("Server started!");
