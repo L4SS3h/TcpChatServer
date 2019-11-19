@@ -24,18 +24,23 @@ namespace TcpChatServer
             {
                 string message = st.ReadLine();
                 Console.WriteLine("Client: " + message);
-
-
                 sw.AutoFlush = true;
                 string message1 = Console.ReadLine();
                 sw.WriteLine(message1);
+
+
+                if (message1 == "EXIT")
+                {
+                    Console.ReadLine();
+                    ns.Close();
+                    connectionSocket.Close();
+                    serverSocket.Stop();
+                    return;
+                }
+               
                 
             }
-            Console.ReadLine();
-
-            ns.Close();
-            connectionSocket.Close();
-            serverSocket.Stop();
+            
         }
     }
 }
